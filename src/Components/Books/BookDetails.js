@@ -1,15 +1,16 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import Heart from "../../Images/healthyfullheart.png"
-import blackHeart from "../../Images/blackheart.png"
-
+import Heart from "../../Images/healthyfullheart.png";
+import blackHeart from "../../Images/blackheart.png";
+import Reviews from "../Reviews/Reviews";
 import "./books.css";
 
 const API = process.env.REACT_APP_API_URL;
 
 function BookDetails() {
   const [book, setBook] = useState({});
+  const [bookReviews, setBookReviews] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -18,7 +19,7 @@ function BookDetails() {
       .delete(`${API}/books/${id}`)
       .then(
         () => {
-          navigate(`/bookmarks`);
+          navigate(`/books`);
         },
         (error) => console.error(error)
       )
@@ -33,45 +34,53 @@ function BookDetails() {
     axios
       .get(`${API}/books/${id}`)
       .then((res) => {
+        const { bookInfo, reviews } = res.data;
         console.log(res.data);
-        setBook(res.data);
+        setBook(bookInfo);
+        setBookReviews(reviews);
       })
       .catch((error) => console.warn(error));
   }, [id]);
 
   return (
-    <div className="Book-content">
-      <div className="card__body">
-        <img className="body_image" src={book.uri} alt="book-img" />
-        <p className="healthy-p1">Title: {book.title}</p>
-        <p className="healthy-p1">Author: {book.author}</p>
-        <p className="healthy-p1">Category: {book.category}</p>
+    <div className="book">
+      <div className="Book-content">
+        <div className="card__body">
+          <div className="book-card">
+          <div className="book-card-top">
+            <img className="body_image" src={book.uri} alt="book-img" />
+            <div className="bookInfo">
+              <h2 className="healthy-p1">{book.title}</h2>
+              <p className="healthy-p1">{book.author}</p>
 
-        <p className="healthy-p1">Year Published: {book.published_year}</p>
-        <p className="healthy-p1">Description: {book.description}</p>
-        <p className="favorite-p">
-                {book.is_favorite ? (
-                  <img className="heartFilled" src={Heart} alt={Heart} />
-                ) : (
-                  <img className="heartEmpty" src={blackHeart} alt={blackHeart} />
-                )}
+              {book.category && book.category.split(' ').map((item) => (<span key={item} className="category-pills">{item}</span>))}
+
+              <p className="healthy-p1">
+                Year Published: {book.published_year}
               </p>
-              <div className="showNavigation">
-        <>
-          <Link to={`/books`}>
-            <button>Back</button>
-          </Link>
-        </>
-        <>
-          <Link to={`/books/id/edit`}>
-            <button>Edit</button>
-          </Link>
-        </>
-        <>
-          <button onClick={handleDelete}>Delete</button>
-        </>
+            </div>
+          </div>
+
+          <p className="healthy-p1">Description: {book.description}</p>
+          <div className="showNavigation">
+            <>
+              <Link to={`/`}>
+                <button>Back</button>
+              </Link>
+            </>
+            <>
+              <Link to={`/books/${id}/edit`}>
+                <button>Edit</button>
+              </Link>
+            </>
+            <>
+              <button onClick={handleDelete}>Delete</button>
+            </>
+          </div>
+          </div>
+        </div>
       </div>
-      </div>
+      <Reviews reviews={bookReviews} setReviews={setBookReviews}/>
     </div>
   );
 }

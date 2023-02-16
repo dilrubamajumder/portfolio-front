@@ -1,0 +1,26 @@
+.books-page-jumbotron {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.books-page-jumbotron h1 {
+    font-size: 2em;
+}
+
+.books-page-jumbotron p {
+    font-size: 0.5em;
+}
+
+@media (min-width: 768px) {
+    .books-page-jumbotron h1 {
+        font-size: 8em;
+    }
+    
+    .books-page-jumbotron p {
+        font-size: 2em;
+    }
+  }

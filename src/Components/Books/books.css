@@ -25,6 +25,44 @@
     vertical-align: middle;
     border-radius: 25px;
   }
+
+  .body_image {
+    height: 300px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .book-card {
+    border: 2px solid gray;
+    width: 600px;
+    padding: 25px;
+    border-radius: 15px;
+  }
+
+  .book {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .bookInfo {
+    margin-left: 50px;
+  }
+
+  .book-card-top {
+    display: flex;
+  }
+
+  .category-pills {
+    padding: 8px;
+    border: 2px solid grey;
+    color: gray;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
   
   
   

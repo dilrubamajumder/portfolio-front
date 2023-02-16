@@ -5,22 +5,28 @@ import { useRef } from "react";
 
 import NavBar from "./Components/NavBar/NavIndex";
 import SideBar from "./Components/SideBar/SideIndex";
-// import Login from "./Components/Login/Login";
+import Login from "./Components/Login/Login";
 
 //Pages
 // import Home from "./Pages/Home";
 import Index from "./Pages/Index";
 import Show from "./Pages/Show";
+import Edit from "./Pages/Edit";
+import New from "./Pages/New";
+import About from "./Pages/About";
+import Signup from "./Pages/Signup";
+import { UserProvider } from './UserContext'
 
 
 function App() {
-
-  const greenBoxRef = useRef();
-  const aboutRef = useRef();
+  const introRef = useRef();
   const bookRef = useRef();
 
   const scrollToSection = (section) => {
-    section.current.scrollIntoView();
+    //section.current.scrollIntoView();
+    const yOffset = -80; 
+    const y = section.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({top: y, behavior: 'smooth'});
   };
 
   const [isOpen, setIsOpen] = useState(false);
@@ -29,6 +35,7 @@ function App() {
   };
 
   return (
+    <UserProvider>
     <div>
       <Router>
         {/* <Home scrollToSection={scrollToSection} greenBoxRef={greenBoxRef} aboutRef={aboutRef} bookRef={bookRef} /> */}
@@ -36,48 +43,38 @@ function App() {
           isOpen={isOpen}
           toggle={toggle}
           scrollToSection={scrollToSection}
-          greenBoxRef={greenBoxRef}
-          aboutRef={aboutRef}
+          introRef={introRef}
           bookRef={bookRef}
         />
-        <NavBar
-          toggle={toggle}
-          scrollToSection={scrollToSection}
-          greenBoxRef={greenBoxRef}
-          aboutRef={aboutRef}
-          bookRef={bookRef}
-        />
-        <button onClick={() => greenBoxRef.current.scrollIntoView()}>
-          SCROLL TO GREEN BOX
-        </button>
-        {/* <Login /> */}
-        {/* <div
-          style={{ height: "100vh", width: "100%", backgroundColor: "red" }}
-        ></div>
-        <div
-          ref={greenBoxRef}
-          style={{ height: "100vh", width: "100%", backgroundColor: "green" }}
-        ></div> */}
-        {/* <About aboutRef={aboutRef}/> */}
+        <NavBar toggle={toggle} introRef={introRef} bookRef={bookRef} scrollToSection={scrollToSection} />
+
         <Routes>
           <Route
             exact
-            path="/books"
+            path="/"
             element={
-              <Index
-                ref={bookRef}
-                style={{
-                  height: "100vh",
-                  width: "100%",
-                  backgroundColor: "white",
-                }}
-              />
+                <Index
+                  bookRef={bookRef}
+                  style={{
+                    height: "100vh",
+                    width: "100%",
+                    backgroundColor: "black",
+                  }}
+                />
+                
             }
           />
           <Route exact path="/books/:id" element={<Show />} />
+          <Route path="/books/:id/edit" element={<Edit />} />
+          <Route path="/books/new" element={<New />} />
+          <Route path="about" element={<About />} />
+          <Route path="signup" element={<Signup />} />
+
+          <Route path="signin" element={<Login />} />
         </Routes>
       </Router>
     </div>
+    </UserProvider>
   );
 }
 

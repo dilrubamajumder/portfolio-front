@@ -10,10 +10,10 @@ import {
   SidebarRoute,
 } from "./SidebarElements";
 
-function SideBar({isOpen, toggle, scrollToSection, greenBoxRef, aboutRef}) {
+function SideBar({isOpen, toggle, scrollToSection, introRef, bookRef}) {
   const handleClick = () => {
     toggle()
-    scrollToSection(greenBoxRef)
+    scrollToSection({introRef, bookRef})
   }
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>
@@ -22,10 +22,10 @@ function SideBar({isOpen, toggle, scrollToSection, greenBoxRef, aboutRef}) {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="about" onClick={handleClick}>About</SidebarLink>
-          <SidebarLink to="books" onClick={toggle}>Books</SidebarLink>
-          <SidebarLink to="addnew" onClick={toggle}>Add New</SidebarLink>
-          <SidebarLink to="signup" onClick={toggle}>Sign Up</SidebarLink>
+          <SidebarLink to="/about" onClick={handleClick}>About</SidebarLink>
+          <SidebarLink to="/" onClick={toggle}>Books</SidebarLink>
+          <SidebarLink to="/addnew" onClick={toggle}>Add New</SidebarLink>
+          <SidebarLink to="/signup" onClick={toggle}>Sign Up</SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
           <SidebarRoute to="/signin">Sign In</SidebarRoute>

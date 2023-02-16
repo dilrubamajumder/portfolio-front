@@ -1,31 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./login.css"
+import "./login.css";
+import { UserContext } from "../../UserContext";
 const API = process.env.REACT_APP_API_URL;
-
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
 
   const sendCredentials = async (username, password) => {
-    const data = { username: username, password: password };
     axios
-    .put(`${API}/users`, data)
+      .put(
+        `${API}/users`,
+        { username, password },
+        { headers: { "Content-Type": "application/json" } }
+      )
       .then((res) => {
-        if (res.status === 200) return res.json();
-       
+        if (res.status === 200) {
+          setUser({ id: res.data.user.id, username: res.data.user.username });
+          window.localStorage.setItem(
+            "book-review-token",
+            JSON.stringify({ id: res.data.user.id, username: res.data.user.username, token: res.data.token })
+          );
+          return navigate("/");
+        }
+
         throw Error("Invalid Username/Password");
       })
       .catch((err) => console.log(err));
   };
 
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    sendCredentials(username, password)
-};
+    sendCredentials(username, password);
+  };
 
   return (
     <form onSubmit={handleSubmit}>
