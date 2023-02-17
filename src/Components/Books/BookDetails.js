@@ -5,12 +5,16 @@ import Heart from "../../Images/healthyfullheart.png";
 import blackHeart from "../../Images/blackheart.png";
 import Reviews from "../Reviews/Reviews";
 import "./books.css";
+import React, { useContext } from "react";
+import { UserContext } from "../../UserContext";
 
 const API = process.env.REACT_APP_API_URL;
 
 function BookDetails() {
   const [book, setBook] = useState({});
   const [bookReviews, setBookReviews] = useState([]);
+  const { user, setUser } = useContext(UserContext)
+
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -64,17 +68,17 @@ function BookDetails() {
           <p className="healthy-p1">Description: {book.description}</p>
           <div className="showNavigation">
             <>
-              <Link to={`/`}>
+              <Link to={`/books`}>
                 <button>Back</button>
               </Link>
             </>
-            <>
-              <Link to={`/books/${id}/edit`}>
+            { user &&<> 
+             <Link to={`/books/${id}/edit`}>
                 <button>Edit</button>
               </Link>
-            </>
+            </> }
             <>
-              <button onClick={handleDelete}>Delete</button>
+              { user && <button onClick={handleDelete}>Delete</button>}
             </>
           </div>
           </div>

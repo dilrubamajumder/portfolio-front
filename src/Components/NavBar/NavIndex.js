@@ -13,7 +13,7 @@ import {
   NavBtnLink,
 } from "./NavbarElement";
 
-function NavBar({toggle, scrollToSection, introRef, bookRef }) {
+function NavBar({toggle, scrollToSection, introRef, bookRef, aboutRef }) {
   const { user, setUser } = useContext(UserContext)
 
   const handleLogout = () => {
@@ -26,16 +26,16 @@ function NavBar({toggle, scrollToSection, introRef, bookRef }) {
     <>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/" onClick={() => scrollToSection(introRef, bookRef)}>Book Review</NavLogo>
+          <NavLogo to="/" onClick={() => scrollToSection(introRef, aboutRef)}>Book Review</NavLogo>
           <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
           <NavMenu>
+            { user && <NavItem>
+              <NavLinks to="/mybooks" onClick={() => scrollToSection(aboutRef)}>My Books</NavLinks>
+            </NavItem>}
             <NavItem>
-              <NavLinks to="/about">About</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to="/" onClick={() => scrollToSection(bookRef, introRef)}>Books</NavLinks>
+              <NavLinks to="/books" onClick={() => scrollToSection(bookRef)}>Books</NavLinks>
             </NavItem>
             { user && <NavItem>
               <NavLinks to="/books/new">Add book</NavLinks>

@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# ReviewED
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ReviewED is a book review app, which makes posting and reviewing books easier. This app allowes the user to sign up and sign in. The sign up allows the user to upload their books and fellow reviewers are able to leave their thoughts and suggestions for the readers next adventure to the world of a new or similar books. Without an account, the viewer is able to view all the uploaded books on the site. The users are also able to update and delete their own books. Once a user leaves their comment, their username is visible in the comment section. There is a book resource tab available users to help them find gems. 
 
-## Available Scripts
+##### [Deployed Site](https://darling-gnome-062292.netlify.app/).
+[Front end Repo](https://github.com/dilrubamajumder/portfolio-front)
 
-In the project directory, you can run:
 
-### `npm start`
+## `Requirements`:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Fork and clone
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- #### npm i
+(This will install all the required dependencies/packages required for this project.)
+###### Packages 
+    -axios: npm i axios
+    -react-icons: npm install react-icons --save
+    -react-router-dom: npm i react-router-dom
+    -react-scripts: npm i react-scripts
+    -react-scroll: npm i react-scroll,
+    -styled-components": npm i styled-components,
 
-### `npm test`
+- touch .env file on you terminal and add correct environment variable example: 
+`REACT_APP_API_URL = http://localhost:4002`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- npm Start to check if the react app is running
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `BackEnd`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+##### Backend Repo
+You Will also need to fork and clone the backend. Heres the repo:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Backend Repo](https://github.com/dilrubamajumder/Portfolio-backend).
 
-### `npm run eject`
+[Here's the Deployed Backend](https://book-portfolio.onrender.com).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

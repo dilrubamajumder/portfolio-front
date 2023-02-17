@@ -1,9 +1,9 @@
 
 import React from 'react'
 
-function aboutPg() {
+function aboutPg( {aboutRef} ) {
   return (
-    <div>
+    <div className='about-bg' ref={aboutRef}>
       {/* <img 
       src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgCDuC4Al_s-FleQae4_M3LL79MybceL6BeA&usqp=CAU'
       alt='aboutimg'

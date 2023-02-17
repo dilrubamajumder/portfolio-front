@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../UserContext";
 import {
   SidebarContainer,
   Icon,
@@ -11,6 +12,14 @@ import {
 } from "./SidebarElements";
 
 function SideBar({isOpen, toggle, scrollToSection, introRef, bookRef}) {
+  const { user, setUser } = useContext(UserContext)
+
+  const handleLogout = () => {
+    window.localStorage.removeItem('book-review-token')
+    setUser(null)
+    window.location.href = '/'
+  }
+
   const handleClick = () => {
     toggle()
     scrollToSection({introRef, bookRef})
@@ -22,14 +31,17 @@ function SideBar({isOpen, toggle, scrollToSection, introRef, bookRef}) {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="/about" onClick={handleClick}>About</SidebarLink>
-          <SidebarLink to="/" onClick={toggle}>Books</SidebarLink>
-          <SidebarLink to="/addnew" onClick={toggle}>Add New</SidebarLink>
-          <SidebarLink to="/signup" onClick={toggle}>Sign Up</SidebarLink>
+          { user && <SidebarLink to="/mybooks" onClick={handleClick}>My Books</SidebarLink>}
+          <SidebarLink to="/books" onClick={toggle}>Books</SidebarLink>
+          { user && <SidebarLink to="/books/new" onClick={toggle}>Add New</SidebarLink>}
+          { !user && <SidebarLink to="/signup" onClick={toggle}>Sign Up</SidebarLink>}
         </SidebarMenu>
-        <SideBtnWrap>
+        { !user && <SideBtnWrap>
           <SidebarRoute to="/signin">Sign In</SidebarRoute>
-        </SideBtnWrap>
+        </SideBtnWrap>}
+        { user && <SideBtnWrap>
+          <SidebarRoute onClick={handleLogout}>Logout</SidebarRoute>
+        </SideBtnWrap>}
       </SidebarWrapper>
     </SidebarContainer>
   );
