@@ -22,15 +22,15 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
-    perspective: 600px;
+    perspective: 500px;
     transform-style: preserve-3d;
   }
   
   .item {
     position: absolute;
-    width: 20rem;
-    height: 30rem;
-    transition: transform 150ms cubic-bezier(0, 0.55, 0.45, 1);
+    width: 13rem;
+    height: 20rem;
+    transition: transform 120ms cubic-bezier(0, 0.55, 0.45, 1);
   }
   
   .left .inner {

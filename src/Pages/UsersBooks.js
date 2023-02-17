@@ -11,6 +11,7 @@ function UsersBooks() {
         <h7> Here are all the Books You uploaded</h7>
         <MyBooks />
       </div>
+      <Moving />
     </div>
   );
 }
