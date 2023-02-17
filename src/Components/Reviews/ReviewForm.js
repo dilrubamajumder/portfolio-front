@@ -40,7 +40,7 @@ function ReviewForm(props) {
     <div className="review-container-form">
       {props.children}
       <form className="reviewsubmit" onSubmit={handleSubmit}>
-        <label htmlFor="content">Leave a Comment: </label>
+        <label classname= "reviewlabl" htmlFor="content">Leave a Comment: </label>
         <input 
           id="content"
           type="text"
