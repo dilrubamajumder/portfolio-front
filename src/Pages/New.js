@@ -1,10 +1,12 @@
 import Newform from "../Components/New/NewForm";
-
+import Moving from "./Movingimages/Moving";
 function New() {
   return (
     <div>
-        <h1>Add a book: </h1>
       <Newform />
+      <div>
+        <Moving />
+      </div>
     </div>
   );
 }

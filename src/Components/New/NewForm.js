@@ -32,7 +32,7 @@ function NewForm({newRef}) {
           })
           .then(
             () => {
-              navigate(`/`);
+              navigate(`/books`);
             },
             (error) => console.log(error)
           )
@@ -67,9 +67,10 @@ function NewForm({newRef}) {
 
   return (
     <div className='newform'>
-        <form onSubmit={handleSubmit}>
-        <label htmlFor="title">
-            Title
+      <h1 className='newh1'> Add to our collection and yours!</h1>
+        <form classname="newformcontainer" onSubmit={handleSubmit}>
+        <label className="newlabel" htmlFor="title">
+            Title:
             <input 
             id='title'
             value={book.title}
@@ -80,8 +81,8 @@ function NewForm({newRef}) {
             />
         </label>
 
-        <label htmlFor="published_year">
-            Year Published
+        <label className="newlabel" htmlFor="published_year">
+            Year Published:
             <input 
             id='published_year'
             value={book.published_year}
@@ -92,8 +93,8 @@ function NewForm({newRef}) {
             />
         </label>
 
-        <label htmlFor="author">
-            Author
+        <label className="newlabel" htmlFor="author">
+            Author:
             <input 
             id='author'
             value={book.author}
@@ -103,8 +104,8 @@ function NewForm({newRef}) {
             required
             />
         </label>
-        <label htmlFor="category">
-            Category
+        <label className="newlabel" htmlFor="category">
+            Category:
             <input 
             id='category'
             value={book.category}
@@ -113,7 +114,7 @@ function NewForm({newRef}) {
             placeholder='romance, comedy..'
             />
         </label>
-        <label htmlFor="description">
+        <label className="newlabel" htmlFor="description">
             Description
             <input 
             id='description'
@@ -133,8 +134,8 @@ function NewForm({newRef}) {
             checked={book.is_favorite}
           />
         </label> */}
-        <label htmlFor="uri">
-            Image
+        <label className="newlabel" htmlFor="uri">
+            Image:
             <input 
             id='uri'
             type= 'text'
@@ -145,7 +146,7 @@ function NewForm({newRef}) {
             />
         </label>
         
-        <button className="submit" 
+        <button className="submitnew" 
             type="submit">
             Submit
         </button>

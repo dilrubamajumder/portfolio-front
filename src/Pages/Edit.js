@@ -1,12 +1,14 @@
 import EditForm from '../Components/Edit/EditForm'
-
+import Moving from './Movingimages/Moving'
 import React from 'react'
 
 function Edit() {
   return (
     <div className='editpage'>
-        <h2>Edit</h2>
         <EditForm />
+        <div>
+        <Moving />
+      </div>
     </div>
   )
 }

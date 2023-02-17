@@ -7,10 +7,10 @@ import { UserProvider } from "./UserContext";
 
 import NavBar from "./Components/NavBar/NavIndex";
 import SideBar from "./Components/SideBar/SideIndex";
-import Login from "./Components/Login/Login";
 
 //Pages
 import Intro from "./Pages/Intro";
+import Login from "./Pages/login";
 import Index from "./Pages/Index";
 import Show from "./Pages/Show";
 import Edit from "./Pages/Edit";
@@ -21,7 +21,6 @@ import UsersBooks from "./Pages/UsersBooks";
 function App() {
   const introRef = useRef();
   const bookRef = useRef();
-  const aboutRef = useRef
 
   const scrollToSection = (section) => {
     //section.current.scrollIntoView();
@@ -42,7 +41,6 @@ function App() {
     <UserProvider>
       <div>
         <Router>
-          {/* <Home scrollToSection={scrollToSection} greenBoxRef={greenBoxRef} aboutRef={aboutRef} bookRef={bookRef} /> */}
           <SideBar
             isOpen={isOpen}
             toggle={toggle}

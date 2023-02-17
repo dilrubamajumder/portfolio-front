@@ -88,7 +88,9 @@ function BookDetails() {
           </div>
         </div>
       </div>
+      <div className="reviews-container">
       <Reviews reviews={bookReviews} setReviews={setBookReviews}/>
+      </div>
     </div>
   );
 }

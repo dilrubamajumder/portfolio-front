@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import "./editForm.css"
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -16,7 +17,6 @@ function EditForm() {
     category: "",
     published_year: "",
     description: "",
-    is_favorite: false,
     uri:
       "" ||
       "https://img.freepik.com/free-vector/hand-drawn-flat-design-stack-books-illustration_23-2149341898.jpg?w=2000",
@@ -59,9 +59,11 @@ function EditForm() {
   };
   return (
     <div className="edit-form">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">
-          Title
+      <h1 className="editformh1">Want to fix something? Edit Away!</h1>
+      <form className="editform"
+      onSubmit={handleSubmit}>
+        <label className="editlabel" htmlFor="title">
+          Title:
           <input
             id="title"
             value={book.title}
@@ -72,8 +74,8 @@ function EditForm() {
           />
         </label>
 
-        <label htmlFor="author">
-          Author
+        <label className="editlabel" htmlFor="author">
+          Author:  
           <input
             id="author"
             value={book.author}
@@ -84,8 +86,8 @@ function EditForm() {
           />
         </label>
 
-        <label htmlFor="published_year">
-          Year Published
+        <label className="editlabel" htmlFor="published_year">
+          Year Published:
           <input
             id="published_year"
             value={book.published_year}
@@ -96,8 +98,8 @@ function EditForm() {
           />
         </label>
 
-        <label htmlFor="category">
-          Category
+        <label className="editlabel" htmlFor="category">
+          Category:
           <input
             id="category"
             value={book.category}
@@ -107,8 +109,8 @@ function EditForm() {
           />
         </label>
 
-        <label htmlFor="description">
-          Description
+        <label className="editlabel" htmlFor="description">
+          Description:
           <input
             id="description"
             value={book.description}
@@ -118,24 +120,16 @@ function EditForm() {
             required
           />
         </label>
-        <label htmlFor="uri">
-          Image
+        <label className="editlabel" htmlFor="uri">
+          Image:
           <input
-            id="image"
+            id="uri"
             value={book.uri}
-            type="string"
+            type="text"
             onChange={handleTextChange}
           />
         </label>
-        <label htmlFor="favorite">
-          Favorite
-          <input
-            id="is_favorite"
-            type="checkbox"
-            onChange={handleTextChange}
-            checked={book.is_favorite}
-          />
-        </label>
+       
 
         <button className="submit" type="submit">
           Submit

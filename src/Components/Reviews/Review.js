@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReviewForm from "./ReviewForm";
+import "./Review.css"
 
 function Review({ review, handleDelete, handleSubmit }) {
   const { id, title, rating, reviewer, content } = review;
@@ -25,9 +26,9 @@ function Review({ review, handleDelete, handleSubmit }) {
           <h5>{reviewer}</h5>
           <p>{content}</p>
           <button onClick={() => handleDelete(id)}>Delete</button>
+          <button onClick={toggleView}>Edit</button>
         </div>
       )}
-      <button onClick={toggleView}>Edit</button>
     </div>
   );
 }

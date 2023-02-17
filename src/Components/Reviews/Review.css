@@ -3,27 +3,21 @@
     border: 2px solid darkblue;
   }
   
-  .Reviews {
-    background-color: rgb(115, 111, 116);
-    padding: 0px;
-    box-shadow: 2px 2px 4px rgb(231, 227, 231);
-  }
+ 
   
   .Reviews > div {
     padding: 1em;
     box-shadow: 0px 0px 2px rgb(120, 120, 121);
     background-color: rgb(169, 164, 172);
-  } 
-  .Reviews div:nth-child(odd) {
-    box-shadow: 2px 2px 4px rgb(61, 60, 61);
-   */
-  
+  }  */
 
+  
   .Edit form {
     margin: 0 auto;
     height: 100px;
     width: 600px;
     margin-top: 10px;
+    height: 20%;
   }
 
   .view-reviews{
@@ -31,4 +25,41 @@
     height: 100px;
     width: 600px;
     margin-top: 10px;
+  }
+
+
+  .Review{
+   border: 5px solid rgb(169, 112, 131);
+   width: 100%;
+   padding: 15px;
+   font-size: 16px;
+   align-items: center;
+   margin: 0 auto;
+   border-radius: 20px;
+   margin-bottom: 7px;
+  }
+
+ .reviewsh2{
+text-align: center;
+text-decoration: underline;
+}
+
+  .reviewsubmit{
+    background-color: rgb(0, 0, 0);
+    border: 2px solid rgb(12, 5, 8);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+   width: 100%;
+   height: 40%;
+   padding: 25px;
+   font-size: 16px;
+   margin-top: 20px;
+   
+
+  }
+
+  
+
+  .review-container-form{
+    border-radius: 15px;
   }

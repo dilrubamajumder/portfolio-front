@@ -1,6 +1,7 @@
 import React from "react";
 import MyBooks from "../Components/UserBooks/MyBooks";
 import "./UserBooks.css";
+import Moving from "./Movingimages/Moving";
 
 function UsersBooks() {
   return (

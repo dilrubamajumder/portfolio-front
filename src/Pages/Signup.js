@@ -1,12 +1,14 @@
 import Register from "../Components/Register/Register";
-
+import Moving from "./Movingimages/Moving";
 import React from 'react'
 
 function Signup() {
   return (
-    <div>
-        <h1> Register for a new account today and enjoy all the perks</h1>
-        <Register />
+    <div className="registerpg">
+       <div><Register /></div> 
+        <div>
+        <Moving />
+      </div>
     </div>
   )
 }

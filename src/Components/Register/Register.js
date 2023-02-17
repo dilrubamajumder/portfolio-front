@@ -33,7 +33,9 @@ function Register() {
       <div >
 
       <form className="registerform" onSubmit={handleSubmit}>
-        <label>
+      <h1 className="registerh1">Please Sign up to take Full Advantage of this Site!</h1>
+
+        <label className="registerlabel">
           Username:
           <input
             type="text"
@@ -42,7 +44,7 @@ function Register() {
           />
         </label>
         <br />
-        <label>
+        <label className="registerlabel">
           Password:
           <input
             type="password"
@@ -51,7 +53,7 @@ function Register() {
           />
         </label>
         <br />
-        <button className="submitbtn-r" type="submit">Submit</button>
+        <button className="submitbtnR" type="submit">Submit</button>
       </form>
       </div>
     );

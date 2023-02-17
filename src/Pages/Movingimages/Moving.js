@@ -1,6 +1,7 @@
 import "./moving.css"
 
 function Moving() {
+    
     const leftPerspectives = [
         { x: -10, z: -4 },
         { x: -20, z: -8 },
@@ -47,8 +48,12 @@ function Moving() {
       
   return (
     
-    loop()
+    loop(
+        
+    )
   )
 }
+
+
 
 export default Moving

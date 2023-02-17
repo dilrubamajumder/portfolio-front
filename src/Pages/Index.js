@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import Books from "../Components/Books/Books"
 import "../Components/Books/books.css"
-
+import Moving from "./Movingimages/Moving"
 function index({bookRef}) {
   return (
   <div>
@@ -14,7 +14,9 @@ function index({bookRef}) {
       <div>
         <Books />
       </div>
-        
+      <div>
+        <Moving />
+      </div>
     </div>
   </div>
    

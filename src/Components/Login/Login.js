@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./login.css";
 import { UserContext } from "../../UserContext";
+
+
 const API = process.env.REACT_APP_API_URL;
 
 const Login = () => {
@@ -40,9 +42,11 @@ const Login = () => {
 
   return (
     <div className="loginbody">
-
     <form className="loginform" onSubmit={handleSubmit}>
-      <label>
+      
+    <h1 className="loginh1">Please Log in to enjoy all the perks!</h1>
+
+      <label className="loginlable">
         Username:
         <input
           type="text"
@@ -51,7 +55,7 @@ const Login = () => {
         />
       </label>
       <br />
-      <label>
+      <label className="loginlable">
         Password:
         <input
           type="password"
@@ -60,7 +64,7 @@ const Login = () => {
         />
       </label>
       <br />
-      <button className="submitbtn" type="submit">Submit</button>
+      <button className="submitbtnL" type="submit">Submit</button>
     </form>
     </div>
   );

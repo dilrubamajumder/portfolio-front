@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./Review.css"
 
 function ReviewForm(props) {
   let { id } = useParams();
@@ -36,11 +37,11 @@ function ReviewForm(props) {
     });
   };
   return (
-    <div className="Edit">
+    <div className="review-container-form">
       {props.children}
-      <form onSubmit={handleSubmit}>
+      <form className="reviewsubmit" onSubmit={handleSubmit}>
         <label htmlFor="content">Leave a Comment: </label>
-        <textarea
+        <input 
           id="content"
           type="text"
           name="content"
@@ -48,6 +49,7 @@ function ReviewForm(props) {
           placeholder="What did you think..."
           onChange={handleTextChange}
         />
+        
         <br />
 
         <input type="submit" />

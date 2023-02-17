@@ -2,6 +2,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Review from "./Review";
 import ReviewForm from "./ReviewForm";
+import "./Review.css"
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -69,7 +70,7 @@ function Reviews({reviews, setReviews}) {
     <section className="Reviews">
       {/* <h1>Reviews</h1> */}
       <ReviewForm handleSubmit={handleAdd} />
-      <h2>Reviews:</h2>
+      <h2 className="reviewsh2"> All Reviews:</h2>
       {reviews.map((review) => (
         <Review
           key={review.id}
