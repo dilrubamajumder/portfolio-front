@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css"
-import { Link } from "react-router-dom"
+import Moving from "./Movingimages/Moving"
 
 function aboutPg({ aboutRef }) {
   return (
@@ -18,6 +18,9 @@ function aboutPg({ aboutRef }) {
           <b>This is a safe space for your imaginations!</b>
          
         </p>
+      </div>
+      <div>
+        <Moving />
       </div>
       
       
