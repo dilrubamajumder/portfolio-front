@@ -141,10 +141,10 @@ function EditForm() {
           Submit
         </button>
 
-      </form>
       <Link to={`/books/${id}`}>
         <button>Nevermind!</button>
       </Link>
+      </form>
     </div>
   );
 }

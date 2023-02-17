@@ -1,8 +1,9 @@
 import { useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios';
-const API = process.env.REACT_APP_API_URL;
+import  "./Newform.css"
 
+const API = process.env.REACT_APP_API_URL;
 
 function NewForm({newRef}) {
     const navigate = useNavigate();
@@ -48,7 +49,7 @@ function NewForm({newRef}) {
         category: "",
         published_year: "",
         description: "",
-        is_favorite: false,
+        // is_favorite: false,
         uri: "",
       });
       const handleTextChange = (e) => {
@@ -65,7 +66,7 @@ function NewForm({newRef}) {
 
 
   return (
-    <div>
+    <div className='newform'>
         <form onSubmit={handleSubmit}>
         <label htmlFor="title">
             Title
@@ -123,7 +124,7 @@ function NewForm({newRef}) {
             required
             />
         </label>
-        <label htmlFor="favorite">
+        {/* <label htmlFor="favorite">
             Favorite
             <input
             id="is_favorite"
@@ -131,13 +132,16 @@ function NewForm({newRef}) {
             onChange={handleCheckboxChange}
             checked={book.is_favorite}
           />
-        </label>
+        </label> */}
         <label htmlFor="uri">
             Image
             <input 
             id='uri'
             type= 'text'
+            placeholder='http://..'
+
             onChange={handleTextChange}
+
             />
         </label>
         
@@ -147,6 +151,10 @@ function NewForm({newRef}) {
         </button>
       </form>
       {error && <h1>{error}</h1>}
+
+      <Link to={`/books`}>
+        <button >Nevermind!</button>
+      </Link>
     </div>
   )
 }

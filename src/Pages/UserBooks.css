@@ -1,0 +1,13 @@
+.mybooks{
+    justify-content: center;
+    text-align: center;
+    margin-left: 30px;
+    font-size: 2rem;
+}
+
+.mybooks h7{
+  padding: 6px;
+  border: 2px solid rgb(184, 124, 61);
+  color: rgb(227, 145, 86);
+  border-radius: 10px;
+}

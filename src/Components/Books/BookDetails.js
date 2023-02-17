@@ -1,8 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import Heart from "../../Images/healthyfullheart.png";
-import blackHeart from "../../Images/blackheart.png";
+
 import Reviews from "../Reviews/Reviews";
 import "./books.css";
 import React, { useContext } from "react";
@@ -19,8 +18,13 @@ function BookDetails() {
   const navigate = useNavigate();
 
   const deleteBook = () => {
+    const {token} = JSON.parse(window.localStorage.getItem('book-review-token')) ?? {}
     axios
-      .delete(`${API}/books/${id}`)
+      .delete(`${API}/books/${id}`, {
+        headers: {
+          authorization: `Bearer ${token}`
+        }
+      })
       .then(
         () => {
           navigate(`/books`);

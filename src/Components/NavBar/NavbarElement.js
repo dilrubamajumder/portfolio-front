@@ -13,7 +13,7 @@ font-size: 1rem;
 position: sticky;
 width:100%;
 top: 0;
-z-index: 10;
+z-index: 5;
 
 @media Screen and (max-width:960px){
     transition: 0.8s all ease;
@@ -34,7 +34,7 @@ export const NavLogo = styled(Link)`
   color: #fff;
   justify-self: flex-start;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   display: flex;
   align-items: center;
   margin-left: 24px;
@@ -58,7 +58,8 @@ export const MobileIcon = styled.div`
 
   &:hover{
     transition: all 0.2s ease-in-out;
-    color:  #180;
+    color: background: linear-gradient(90deg, rgba(245,165,191,1) 17%, rgba(255,96,103,1) 77%);
+  
   }
 `;
 
@@ -86,6 +87,7 @@ export const NavLinks = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  font-size: 1.5rem;
 
   &.active {
     border-bottom: 3px solid #01bf71;
@@ -103,11 +105,11 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(Link)`
   border-radius: 50px;
-  background: #01bf71;
+  background: linear-gradient(90deg, rgba(245,165,191,1) 17%, rgba(255,96,103,1) 77%);
   white-space: nowrap;
   padding: 10px 22px;
   color: #010606;
-  font-size: 16px;
+  font-size: 20px;
   outline: none;
   border: none;
   cursor: pointer;
@@ -116,7 +118,7 @@ export const NavBtnLink = styled(Link)`
 
   &:hover{
     transition: all 0.2s ease-in-out;
-    background: #fff;
+    background: linear-gradient(90deg, rgba(228,96,96,1) 17%, rgba(136,254,249,1) 77%);
     color:  #010606;
   }
 `;

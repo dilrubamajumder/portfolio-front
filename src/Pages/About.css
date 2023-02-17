@@ -1,0 +1,36 @@
+.about-bg {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border: 5px solid rgb(252, 179, 179);
+    border-radius: 15px ;
+    width: 70%;
+    margin: 0 auto;
+    color: black;
+    
+  }
+  
+  .about-bg > div {
+    flex: 1; 
+    margin: 0 auto; 
+    padding-right: 10px;
+  }
+
+
+  @media only screen and (max-width: 767px) {
+    .about-bg {
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      padding: 10px;
+    }
+  
+    .about-bg > div {
+      margin: 10px 0; 
+      text-align: center;
+    }
+  }
+
+  .mobile-p{
+    font-size: 25px;
+  }

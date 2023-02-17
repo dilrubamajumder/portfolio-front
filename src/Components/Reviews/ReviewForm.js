@@ -6,9 +6,9 @@ function ReviewForm(props) {
   const { reviewDetails } = props;
 
   const [reviews, setReviews] = useState({
-    title: "",
+    // title: "",
     content: "",
-    rating: "",
+    // rating: "",
     book_id: id,
   });
 
@@ -29,9 +29,9 @@ function ReviewForm(props) {
       props.toggleView();
     }
     setReviews({
-      title: "",
+      // title: "",
       content: "",
-      rating: "",
+      // rating: "",
       book_id: id,
     });
   };
@@ -39,28 +39,7 @@ function ReviewForm(props) {
     <div className="Edit">
       {props.children}
       <form onSubmit={handleSubmit}>
-        <label htmlFor="title">Title:</label>
-        <input
-          id="title"
-          type="text"
-          required
-          value={reviews.title}
-          onChange={handleTextChange}
-        />
-        <label htmlFor="rating">Rating:</label>
-        <input
-          id="rating"
-          type="number"
-          name="rating"
-          min="0"
-          max="5"
-          step="1"
-          value={reviews.rating}
-          placeholder="0-5"
-
-          onChange={handleTextChange}
-        />
-        <label htmlFor="content">Review:</label>
+        <label htmlFor="content">Leave a Comment: </label>
         <textarea
           id="content"
           type="text"

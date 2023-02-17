@@ -30,7 +30,9 @@ function Register() {
   };
   
     return (
-      <form onSubmit={handleSubmit}>
+      <div >
+
+      <form className="registerform" onSubmit={handleSubmit}>
         <label>
           Username:
           <input
@@ -49,8 +51,9 @@ function Register() {
           />
         </label>
         <br />
-        <button type="submit">Submit</button>
+        <button className="submitbtn-r" type="submit">Submit</button>
       </form>
+      </div>
     );
   };
 

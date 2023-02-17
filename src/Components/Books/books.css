@@ -27,8 +27,8 @@
   }
 
   .body_image {
-    height: 300px;
-    width: 200px;
+    height: 400px;
+    width: 250px;
     object-fit: cover;
     border-radius: 10px;
   }
@@ -46,6 +46,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 50px;
+    
   }
 
   .bookInfo {
@@ -59,18 +61,18 @@
   .category-pills {
     padding: 8px;
     border: 2px solid grey;
-    color: gray;
+    color: rgb(16, 15, 15);
     border-radius: 10px;
     margin-right: 10px;
   }
   
   
-  
+/*   
   .heart img {
     width: 40px;
     margin-top: 0px;
   }
-  
+   */
   .book-title{
     margin: 0;
     color: black;
@@ -83,7 +85,15 @@
 .indexpg-title{
     justify-content: center;
     text-align: center;
-    font-size: 3rem;
+    margin-left: 30px;
+    font-size: 2rem;
+}
+
+.index-subtitle{
+  padding: 6px;
+  border: 2px solid rgb(184, 124, 61);
+  color: rgb(177, 97, 39);
+  border-radius: 10px;
 }
 
 

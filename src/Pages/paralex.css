@@ -1,47 +1,60 @@
-.paralex{
-    /* background-color: #2660d5; */
-    min-height: 100vh;max-width: 100vw;
+.paralex {
+  /* background-color: #2660d5; */
+  min-height: 100vh;
+  max-width: 100vw;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: rgb(15, 15, 15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(15, 15, 15);
 }
 
-.aboutparalex{
+.quote1 {
+  width: 500px;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(53, 176, 171);
 }
 
-
-
-.quote1{
-    width: 500px;
-    text-align: center;
-    font-size: 2rem;
-    color: rgb(53,176,171) ;
+.livedquote {
+  width: 500px;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(53, 176, 171);
 }
 
-.livedquote{
-    width: 500px;
-    text-align: center;
-    font-size: 2rem;
-    color: rgb(53,176,171) ;
-}
-
-
-.bookshelf{
-    min-height: 100vh;
-    align-items: center;
-
+.bookshelf {
+  min-height: 100vh;
+  align-items: center;
 }
 
 .title {
-    color: rgb(1, 0, 0);
-    text-shadow: 1px 1px 2px rgb(239, 231, 231);
-    text-overflow: ellipsis;
-    font-size: 50px;
-    z-index: 1;
-    margin-top: 10px;
+  color: rgb(1, 0, 0);
+  text-shadow: 1px 1px 2px rgb(239, 231, 231);
+  text-overflow: ellipsis;
+  font-size: 50px;
+  z-index: 1;
+  margin-top: 10px;
+}
 
+/* mobileview */
+.mobile-home-img {
+  min-height: 70%;
+  max-width: 100%;
+  margin: 0 auto;
+  opacity: .9;
+}
+
+.mobile-welcome-msg {
+  position: absolute;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 2px rgb(15, 15, 15);
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
